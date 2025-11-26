@@ -305,11 +305,11 @@ export default function ClientDetailsModal({ client, onClose, onSuccess }: Props
   const silenceInfo = calculateSilenceCountdown();
 
   return (
-    <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4 animate-fade-in overflow-y-auto">
-      <div className="bg-white rounded-2xl p-6 max-w-5xl w-full max-h-[90vh] overflow-y-auto shadow-2xl animate-scale-in my-8">
-        <div className="flex justify-between items-center mb-6">
+    <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-2 sm:p-4 animate-fade-in overflow-y-auto">
+      <div className="bg-white rounded-xl sm:rounded-2xl p-4 sm:p-6 max-w-5xl w-full max-h-[95vh] sm:max-h-[90vh] overflow-y-auto shadow-2xl animate-scale-in my-2 sm:my-8">
+        <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-4 mb-4 sm:mb-6">
           <div>
-            <h2 className="text-2xl font-bold text-gray-900">
+            <h2 className="text-xl sm:text-2xl font-bold text-gray-900">
               {clientData.first_name} {clientData.last_name}
             </h2>
             <p className="text-gray-600 mt-1">{clientData.case_type || 'No template assigned'}</p>
@@ -434,7 +434,7 @@ export default function ClientDetailsModal({ client, onClose, onSuccess }: Props
         {/* Client Information */}
         <div className="mb-6 p-4 bg-gray-50 rounded-lg">
           <h3 className="text-lg font-semibold text-gray-900 mb-3">Client Information</h3>
-          <div className="grid grid-cols-2 gap-4 text-sm">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-sm">
             <div>
               <span className="text-gray-600">Email:</span>
               <span className="ml-2 text-gray-900">{clientData.email || 'N/A'}</span>
@@ -492,7 +492,7 @@ export default function ClientDetailsModal({ client, onClose, onSuccess }: Props
 
           {showPaymentForm && (
             <form onSubmit={handleAddPayment} className="mb-4 p-4 bg-green-50 rounded-lg border border-green-200">
-              <div className="grid grid-cols-3 gap-4 mb-3">
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-3">
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-1">Amount (€)</label>
                   <input
@@ -574,7 +574,7 @@ export default function ClientDetailsModal({ client, onClose, onSuccess }: Props
                 <h4 className="text-sm font-semibold text-gray-900 mb-2">Payment History</h4>
                 <div className="space-y-2">
                   {clientData.payment.payments.map((payment: any, index: number) => (
-                    <div key={index} className="flex justify-between items-center text-sm bg-gray-50 p-2 rounded">
+                    <div key={index} className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-2 text-sm bg-gray-50 p-2 sm:p-3 rounded">
                       <div>
                         <span className="font-medium">€{payment.amount}</span>
                         <span className="text-gray-600 ml-2">via {payment.method}</span>

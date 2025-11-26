@@ -49,14 +49,14 @@ export default function Dashboard() {
 
   return (
     <div className="space-y-8 animate-fade-in">
-      <div className="border-b border-gray-200 pb-6">
-        <h2 className="text-4xl font-bold text-slate-900 mb-2 tracking-tight">Dashboard</h2>
-        <p className="text-slate-600 text-lg">Comprehensive overview of your immigration cases</p>
+      <div className="border-b border-gray-200 pb-4 sm:pb-6">
+        <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-slate-900 mb-2 tracking-tight">Dashboard</h2>
+        <p className="text-slate-600 text-base sm:text-lg">Comprehensive overview of your immigration cases</p>
       </div>
 
       {/* Stats Cards */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6">
-        <div className="bg-white rounded-2xl p-6 professional-shadow-lg border border-gray-100 card-hover animate-slide-up">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-4 sm:gap-6">
+        <div className="bg-white rounded-xl sm:rounded-2xl p-4 sm:p-6 professional-shadow-lg border border-gray-100 card-hover animate-slide-up">
           <div className="flex items-center justify-between mb-4">
             <div className="bg-slate-100 p-3 rounded-xl">
               <FileText className="w-6 h-6 text-slate-700" />
@@ -125,11 +125,11 @@ export default function Dashboard() {
       </div>
 
       {/* Recent Clients */}
-      <div className="bg-white rounded-2xl professional-shadow-lg border border-gray-100 p-8 animate-slide-up" style={{ animationDelay: '0.5s' }}>
-        <div className="flex items-center justify-between mb-6">
+      <div className="bg-white rounded-xl sm:rounded-2xl professional-shadow-lg border border-gray-100 p-4 sm:p-6 lg:p-8 animate-slide-up" style={{ animationDelay: '0.5s' }}>
+        <div className="flex items-center justify-between mb-4 sm:mb-6">
           <div>
-            <h3 className="text-2xl font-bold text-slate-900">Recent Clients</h3>
-            <p className="text-sm text-slate-500 mt-1">Latest client activity</p>
+            <h3 className="text-xl sm:text-2xl font-bold text-slate-900">Recent Clients</h3>
+            <p className="text-xs sm:text-sm text-slate-500 mt-1">Latest client activity</p>
           </div>
         </div>
         {clients.length === 0 ? (
@@ -144,7 +144,7 @@ export default function Dashboard() {
               <div
                 key={client.id}
                 onClick={() => setSelectedClient(client)}
-                className="flex items-center justify-between p-5 bg-slate-50 rounded-xl hover:bg-slate-100 border border-slate-200/50 transition-all duration-200 group cursor-pointer hover:border-slate-300 hover:shadow-md"
+                className="flex flex-col sm:flex-row sm:items-center sm:justify-between p-4 sm:p-5 bg-slate-50 rounded-xl hover:bg-slate-100 border border-slate-200/50 transition-all duration-200 group cursor-pointer hover:border-slate-300 hover:shadow-md gap-3 sm:gap-0"
               >
                 <div className="flex items-center space-x-4 flex-1">
                   <div className="bg-slate-200 group-hover:bg-slate-300 p-2.5 rounded-lg transition-colors">
@@ -165,13 +165,13 @@ export default function Dashboard() {
                     </div>
                   </div>
                 </div>
-                <div className="text-right">
-                  <div className="inline-flex items-center space-x-2 bg-white px-4 py-2 rounded-lg border border-slate-200">
-                    <span className="text-lg font-bold text-slate-900">
+                <div className="text-left sm:text-right w-full sm:w-auto">
+                  <div className="inline-flex items-center space-x-2 bg-white px-3 sm:px-4 py-2 rounded-lg border border-slate-200">
+                    <span className="text-base sm:text-lg font-bold text-slate-900">
                       {client.required_documents?.filter((d: any) => d.submitted).length || 0}
                     </span>
                     <span className="text-slate-400">/</span>
-                    <span className="text-lg font-semibold text-slate-600">
+                    <span className="text-base sm:text-lg font-semibold text-slate-600">
                       {client.required_documents?.length || 0}
                     </span>
                   </div>
@@ -195,8 +195,8 @@ export default function Dashboard() {
 
       {/* Awaiting Submission Modal */}
       {showAwaitingModal && (
-        <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4 animate-fade-in overflow-y-auto">
-          <div className="bg-white rounded-2xl p-6 max-w-4xl w-full max-h-[90vh] overflow-y-auto shadow-2xl animate-scale-in my-8">
+        <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-2 sm:p-4 animate-fade-in overflow-y-auto">
+          <div className="bg-white rounded-xl sm:rounded-2xl p-4 sm:p-6 max-w-4xl w-full max-h-[95vh] sm:max-h-[90vh] overflow-y-auto shadow-2xl animate-scale-in my-4 sm:my-8">
             <div className="flex justify-between items-center mb-6">
               <div>
                 <h2 className="text-2xl font-bold text-slate-900">Clients Awaiting Submission</h2>
@@ -268,8 +268,8 @@ export default function Dashboard() {
 
       {/* Submitted to Administrative Modal */}
       {showSubmittedModal && (
-        <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4 animate-fade-in overflow-y-auto">
-          <div className="bg-white rounded-2xl p-6 max-w-4xl w-full max-h-[90vh] overflow-y-auto shadow-2xl animate-scale-in my-8">
+        <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-2 sm:p-4 animate-fade-in overflow-y-auto">
+          <div className="bg-white rounded-xl sm:rounded-2xl p-4 sm:p-6 max-w-4xl w-full max-h-[95vh] sm:max-h-[90vh] overflow-y-auto shadow-2xl animate-scale-in my-4 sm:my-8">
             <div className="flex justify-between items-center mb-6">
               <div>
                 <h2 className="text-2xl font-bold text-slate-900">Cases Submitted to Administrative</h2>

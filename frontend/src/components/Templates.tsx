@@ -45,15 +45,15 @@ export default function Templates() {
   }
 
   return (
-    <div className="space-y-8 animate-fade-in">
-      <div className="flex justify-between items-center border-b border-gray-200 pb-6">
+    <div className="space-y-6 sm:space-y-8 animate-fade-in">
+      <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-4 border-b border-gray-200 pb-4 sm:pb-6">
         <div>
-          <h2 className="text-4xl font-bold text-slate-900 mb-2 tracking-tight">Case Templates</h2>
-          <p className="text-slate-600 text-lg">Create and manage case templates</p>
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-slate-900 mb-2 tracking-tight">Case Templates</h2>
+          <p className="text-slate-600 text-base sm:text-lg">Create and manage case templates</p>
         </div>
         <button
           onClick={() => setShowCreateModal(true)}
-          className="bg-slate-900 text-white px-6 py-3 rounded-xl font-semibold professional-shadow-lg hover:bg-slate-800 hover:shadow-xl transform hover:scale-105 transition-all duration-200 flex items-center space-x-2"
+          className="bg-slate-900 text-white px-4 sm:px-6 py-2.5 sm:py-3 rounded-xl font-semibold professional-shadow-lg hover:bg-slate-800 hover:shadow-xl transform hover:scale-105 transition-all duration-200 flex items-center justify-center space-x-2 w-full sm:w-auto"
         >
           <Plus className="w-5 h-5" />
           <span>New Template</span>
@@ -61,25 +61,25 @@ export default function Templates() {
       </div>
 
       {templates.length === 0 ? (
-        <div className="bg-white rounded-2xl professional-shadow-lg border border-gray-100 p-16 text-center animate-scale-in">
-          <div className="bg-slate-100 w-20 h-20 rounded-2xl flex items-center justify-center mx-auto mb-6">
-            <FileText className="w-10 h-10 text-slate-400" />
+        <div className="bg-white rounded-xl sm:rounded-2xl professional-shadow-lg border border-gray-100 p-8 sm:p-16 text-center animate-scale-in">
+          <div className="bg-slate-100 w-16 h-16 sm:w-20 sm:h-20 rounded-xl sm:rounded-2xl flex items-center justify-center mx-auto mb-4 sm:mb-6">
+            <FileText className="w-8 h-8 sm:w-10 sm:h-10 text-slate-400" />
           </div>
-          <h3 className="text-2xl font-bold text-slate-900 mb-2">No templates yet</h3>
-          <p className="text-slate-500 mb-8 text-lg">Create your first template to get started</p>
+          <h3 className="text-xl sm:text-2xl font-bold text-slate-900 mb-2">No templates yet</h3>
+          <p className="text-slate-500 mb-6 sm:mb-8 text-base sm:text-lg">Create your first template to get started</p>
           <button
             onClick={() => setShowCreateModal(true)}
-            className="bg-slate-900 text-white px-8 py-3.5 rounded-xl font-semibold hover:bg-slate-800 transition-all professional-shadow-lg hover:shadow-xl"
+            className="bg-slate-900 text-white px-6 sm:px-8 py-3 sm:py-3.5 rounded-xl font-semibold hover:bg-slate-800 transition-all professional-shadow-lg hover:shadow-xl"
           >
             Create Template
           </button>
         </div>
       ) : (
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
           {templates.map((template, index) => (
             <div
               key={template.id}
-              className="bg-white rounded-2xl professional-shadow-lg border border-gray-100 p-6 card-hover animate-slide-up"
+              className="bg-white rounded-xl sm:rounded-2xl professional-shadow-lg border border-gray-100 p-4 sm:p-6 card-hover animate-slide-up"
               style={{ animationDelay: `${index * 0.1}s` }}
             >
               <div className="flex justify-between items-start mb-4">
