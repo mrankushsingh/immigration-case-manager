@@ -25,6 +25,8 @@ interface Client {
   application_date?: string;
   notifications: any[];
   additional_docs_required: boolean;
+  notes?: string;
+  additional_documents?: any[];
   created_at: string;
   updated_at: string;
 }

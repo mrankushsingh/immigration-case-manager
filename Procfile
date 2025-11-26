@@ -1,2 +1,2 @@
-web: cd backend && npx tsx index.ts
+web: npm run build:backend && cd backend && node dist/index.js
 
