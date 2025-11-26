@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Bell, X, Clock, AlertCircle, CheckCircle, Send, XCircle } from 'lucide-react';
+import { Bell, X, Clock, AlertCircle, CheckCircle, XCircle } from 'lucide-react';
 import { api } from '../utils/api';
 import { Client } from '../types';
 
@@ -128,7 +128,6 @@ export default function Notifications({ onClientClick }: Props) {
   };
 
   const unreadCount = reminders.length;
-  const highPriorityCount = reminders.filter(r => r.priority === 'high').length;
 
   const getIcon = (type: string) => {
     switch (type) {
